@@ -81,4 +81,7 @@ def download_audio():
         return jsonify({"error": "Failed to download audio"}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get('PORT',5000))
+    host = '0.0.0.0'
+    
+    app.run(host=host, port=port, debug=False)
